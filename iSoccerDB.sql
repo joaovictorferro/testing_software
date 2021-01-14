@@ -63,4 +63,35 @@ create table trainingCenter(
 	bedroomNumber int not null
 );
 
-select * from person;
+create table ingresso(
+	id_ingresso int primary key not null,
+	estoque int not null,
+    precoVenda decimal (10, 2) not null,
+    quantComprada int not null
+);
+
+create table compraIngresso(
+	id_ingresso int primary key not null,
+	cpf varchar(11) not null,
+    precoValor decimal (10, 2) not null,
+    quantComprada int not null
+);
+
+create table Utilitario(
+	id_utilitario int primary key not null,
+	estoque int not null,
+    precoVenda decimal (10, 2) not null,
+    quantComprada int not null
+);
+
+create table compraUtilitario(
+	id_utilitario int primary key not null,
+	cpf varchar(11) not null,
+    precoValor decimal (10, 2) not null,
+    quantComprada int not null
+);
+
+create table agendarVisita(
+	id_visita int primary key not null,
+    dia_visita int not null
+);

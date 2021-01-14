@@ -1,14 +1,13 @@
 package br.com.ufal.iSoccer.utils;
 
-import br.com.ufal.iSoccer.entidades.Ingresso;
 import br.com.ufal.iSoccer.entidades.Person;
+import br.com.ufal.iSoccer.entidades.Utilitario;
 
 import java.util.Date;
-import java.util.List;
 
-public class CompraIngressUtils {
+public class CompraUtilitariosUtils {
     private Person person;
-    private Ingresso ingresso;
+    private Utilitario utilitario;
     private Double valor;
     private Date dataCompra;
 
@@ -36,11 +35,11 @@ public class CompraIngressUtils {
         this.dataCompra = dataCompra;
     }
 
-    public Ingresso getIngresso() {
-        return ingresso;
+    public Utilitario getUtilitario() {
+        return utilitario;
     }
 
-    public void setIngresso(Ingresso ingresso) {
-        this.ingresso = ingresso;
+    public void setUtilitario(Utilitario utilitario) {
+        this.utilitario = utilitario;
     }
 }

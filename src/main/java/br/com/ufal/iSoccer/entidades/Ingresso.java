@@ -1,14 +1,17 @@
 package br.com.ufal.iSoccer.entidades;
 
 public class Ingresso {
-    private String cpf;
+
+    private Integer id;
     private Integer estoque;
     private Double precoVenda;
+    private Integer quantComprada;
 
-    public Ingresso(String cpf, Integer estoque, Double precoVenda){
-        this.cpf = cpf;
+    public Ingresso(Integer id, Integer estoque, Double precoVenda,Integer quantComparada){
+        this.id = id;
         this.estoque = estoque;
         this.precoVenda = precoVenda;
+        this.quantComprada = quantComparada;
     }
 
     public Double getPrecoVenda() {
@@ -21,14 +24,6 @@ public class Ingresso {
 
     public Ingresso(){ }
 
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public Integer getEstoque() {
         return estoque;
     }
@@ -36,4 +31,21 @@ public class Ingresso {
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
     }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        id = id;
+    }
+
+    public Integer getQuantComprada() {
+        return quantComprada;
+    }
+
+    public void setQuantComprada(Integer quantComprada) {
+        this.quantComprada = quantComprada;
+    }
+
 }

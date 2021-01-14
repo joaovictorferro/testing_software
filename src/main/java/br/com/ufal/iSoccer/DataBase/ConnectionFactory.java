@@ -21,6 +21,7 @@ public class ConnectionFactory {
     public static void closeConnection(Connection con){
         try {
             con.close();
+            con = null;
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -29,6 +30,7 @@ public class ConnectionFactory {
     public static void closeConnection(Connection con, PreparedStatement stmt){
         try {
             stmt.close();
+            stmt = null;
             closeConnection(con);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,6 +40,7 @@ public class ConnectionFactory {
     public static void closeConnection(Connection con, PreparedStatement stmt, ResultSet rs){
         try {
             rs.close();
+            rs = null;
             closeConnection(con,stmt);
         } catch (SQLException e) {
             e.printStackTrace();
