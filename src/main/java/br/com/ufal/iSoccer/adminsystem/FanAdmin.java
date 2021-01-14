@@ -1,7 +1,7 @@
 package br.com.ufal.iSoccer.adminsystem;
 
-import br.com.ufal.iSoccer.DAOMYSQL.FanDAO;
-import br.com.ufal.iSoccer.persons.*;
+import br.com.ufal.iSoccer.DAO.FanDAO;
+import br.com.ufal.iSoccer.entidades.*;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

@@ -1,10 +1,5 @@
 package br.com.ufal.iSoccer.adminsystem;
 
-import br.com.ufal.iSoccer.DataBase.ConnectionFactory;
-import br.com.ufal.iSoccer.persons.Person;
-import br.com.ufal.iSoccer.persons.Fan;
-import br.com.ufal.iSoccer.adminsystem.*;
-
 import java.util.*;
 public class AdminFunctions {
 
@@ -42,12 +37,12 @@ public class AdminFunctions {
     public String verificarTelefone(String telefone) throws Exception{
     	if (telefone.length() != 11)
     	{
-    		 throw new Exception("CPF Errado!!");
+    		 throw new Exception("Telefone Errado!!");
     	}
     	 for (int i = 0; i < telefone.length(); i++) {
              char ch = telefone.charAt(i);
              if (ch < 48 || ch > 57)
-            	 throw new Exception("Numero encontrado no CPF!!");
+            	 throw new Exception("Numero encontrado no Telefone!!");
        }
     	return telefone;
     }

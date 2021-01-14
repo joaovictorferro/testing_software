@@ -1,10 +1,10 @@
 package br.com.ufal.iSoccer.adminsystem;
 
-import br.com.ufal.iSoccer.DAOMYSQL.DoctorDAO;
-import br.com.ufal.iSoccer.DAOMYSQL.DriverDAO;
-import br.com.ufal.iSoccer.DAOMYSQL.PlayerDAO;
-import br.com.ufal.iSoccer.persons.*;
-import br.com.ufal.iSoccer.DAOMYSQL.PersonDAO;
+import br.com.ufal.iSoccer.DAO.DoctorDAO;
+import br.com.ufal.iSoccer.DAO.DriverDAO;
+import br.com.ufal.iSoccer.DAO.PlayerDAO;
+import br.com.ufal.iSoccer.entidades.*;
+import br.com.ufal.iSoccer.DAO.PersonDAO;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;

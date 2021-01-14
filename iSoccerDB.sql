@@ -62,3 +62,5 @@ create table trainingCenter(
 	exist boolean not null,
 	bedroomNumber int not null
 );
+
+select * from person;

@@ -32,5 +32,4 @@ public class ConnectionFactoryTest {
         connection.closeConnection(con);
         assertTrue(con.isClosed());
     }
-
 }

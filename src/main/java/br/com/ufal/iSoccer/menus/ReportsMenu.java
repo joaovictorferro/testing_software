@@ -1,10 +1,10 @@
 package br.com.ufal.iSoccer.menus;
 
-import br.com.ufal.iSoccer.DAOMYSQL.*;
+import br.com.ufal.iSoccer.DAO.*;
 import br.com.ufal.iSoccer.adminsystem.EmployeeAdmin;
 import br.com.ufal.iSoccer.adminsystem.FanAdmin;
-import br.com.ufal.iSoccer.persons.Fan;
-import br.com.ufal.iSoccer.persons.Person;
+import br.com.ufal.iSoccer.entidades.Fan;
+import br.com.ufal.iSoccer.entidades.Person;
 import br.com.ufal.iSoccer.physicalResources.Bus;
 import br.com.ufal.iSoccer.physicalResources.Stadium;
 import br.com.ufal.iSoccer.physicalResources.TrainingCenter;

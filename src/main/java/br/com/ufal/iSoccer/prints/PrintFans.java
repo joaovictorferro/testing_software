@@ -1,9 +1,9 @@
   
 package br.com.ufal.iSoccer.prints;
 
-import br.com.ufal.iSoccer.DAOMYSQL.FanDAO;
-import br.com.ufal.iSoccer.DAOMYSQL.PersonDAO;
-import br.com.ufal.iSoccer.persons.Fan;
+import br.com.ufal.iSoccer.DAO.FanDAO;
+import br.com.ufal.iSoccer.DAO.PersonDAO;
+import br.com.ufal.iSoccer.entidades.Fan;
 
 import java.util.ArrayList;
 
