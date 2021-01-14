@@ -11,20 +11,17 @@ import java.util.List;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PersonDAOTest {
+
     @Test
-    public void t0001_CreatPerson(){
+    public void t0001_DeveCreatPerson(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
         PersonDAO dao = new PersonDAO();
 
-        if(dao.creatPersonDAO(person)){
-            System.out.println("Salvo com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+        Assert.assertTrue(dao.creatPersonDAO(person));
     }
 
     @Test
-    public void t0002_FindAll(){
+    public void t0002_DeveFindAll(){
         PersonDAO dao = new PersonDAO();
         List<Person> persons = new ArrayList<>();
 
@@ -33,7 +30,7 @@ public class PersonDAOTest {
     }
 
     @Test
-    public void t0003_FindPersonCpf(){
+    public void t0003_DeveFindPersonCpf(){
         PersonDAO dao = new PersonDAO();
         List<Person> persons = new ArrayList<>();
 
@@ -43,85 +40,57 @@ public class PersonDAOTest {
     }
 
     @Test
-    public void t0004_UpdatePersonNome(){
+    public void t0004_DeveUpdatePersonNome(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
         PersonDAO dao = new PersonDAO();
 
-        if(dao.updateNamePersonDAO(person)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.updateNamePersonDAO(person));
     }
 
     @Test
-    public void t0005_UpdatePersonTel(){
+    public void t0005_DeveUpdatePersonTel(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
         PersonDAO dao = new PersonDAO();
 
-        if(dao.updateTelPersonDAO(person)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.updateTelPersonDAO(person));
     }
 
     @Test
-    public void t0006_UpdatePersonEmail(){
+    public void t0006_DeveUpdatePersonEmail(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
         PersonDAO dao = new PersonDAO();
 
-        if(dao.updateEmailPersonDAO(person)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.updateEmailPersonDAO(person));
     }
 
     @Test
-    public void t0007_UpdatePersonTipo(){
+    public void t0007_DeveUpdatePersonTipo(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
         PersonDAO dao = new PersonDAO();
 
-        if(dao.updateTipoPersonDAO(person)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.updateTipoPersonDAO(person));
     }
 
     @Test
-    public void t0008_UpdatePersonSalary(){
+    public void t0008_DeveUpdatePersonSalary(){
         Person person = new Person("Joao","12345678910","123456789","joao@gmail.com",200.00,"medico");
-
         PersonDAO dao = new PersonDAO();
 
-        if(dao.updateSalaryPersonDAO("12345678910",2020.20)){
-            System.out.println("Alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.updateSalaryPersonDAO("12345678910",2020.20));
     }
 
     @Test
     public void t0009_DeletePerson(){
         Person person = new Person();
         PersonDAO dao = new PersonDAO();
-        if(dao.deletePersonDAO(person)){
-            System.out.println("Deletado com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+
+        Assert.assertTrue(dao.deletePersonDAO(person));
     }
 
     @Test
     public void t0010_DeletePersonCpf(){
         PersonDAO dao = new PersonDAO();
 
-        if(dao.deletePersonDAO("12345678910")){
-            System.out.println("Deletado com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+        Assert.assertTrue(dao.deletePersonDAO("12345678910"));
     }
 }

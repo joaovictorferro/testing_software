@@ -13,18 +13,14 @@ import java.util.List;
 public class BusDAOTest {
 
     @Test
-    public void t0001_CreatBus(){
+    public void t0001_DeveCreatBus(){
         Bus bus = new Bus(false,false,1);
         BusDAO dao = new BusDAO();
 
-        if(dao.creatBus(bus)){
-            System.out.println("Salvo com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+        Assert.assertTrue(dao.creatBus(bus));
     }
     @Test
-    public void t0002_FindAllBus(){
+    public void t0002_DeveFindAllBus(){
         BusDAO dao = new BusDAO();
         List<Bus> buss = new ArrayList<>();
 
@@ -32,37 +28,25 @@ public class BusDAOTest {
         Assert.assertFalse(buss.isEmpty());
     }
     @Test
-    public void t0003_UpdateExistBus(){
+    public void t0003_DeveUpdateExistBus(){
         Bus bus = new Bus(true,false,1);
         BusDAO dao = new BusDAO();
 
-        if(dao.UpdateBusExist(bus)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateBusAvailable(bus));
     }
 
     @Test
-    public void t0004_UpdateAvaliableBus(){
+    public void t0004_DeveUpdateAvaliableBus(){
         Bus bus = new Bus(true,true,1);
         BusDAO dao = new BusDAO();
 
-        if(dao.UpdateBusAvailable(bus)){
-            System.out.println("Deletado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateBusAvailable(bus));
     }
 
     @Test
-    public void t0005_DeleteBusId(){
+    public void t0005_DeveDeleteBusId(){
        BusDAO dao = new BusDAO();
-        if(dao.deleteBus(1)){
-            System.out.println("Deletado com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
-    }
 
+       Assert.assertTrue(dao.deleteBus(1));
+    }
 }

@@ -11,32 +11,30 @@ import java.util.List;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class DriverDAOTest {
     private static Person person;
+    private static PersonDAO dao;
+
     @BeforeClass
     public static void setupClass(){
-        person = new Person("Joao","12345678913","123456789","joao@gmail.com",200.00,"fan");
-        PersonDAO dao2 = new PersonDAO();
-        dao2.creatPersonDAO(person);
+        person = new Person("Joao","12345678913","123456789","joao@gmail.com",200.00,"motorista");
+        dao = new PersonDAO();
+        dao.creatPersonDAO(person);
     }
 
     @AfterClass
     public static void tearDownClass(){
-        PersonDAO dao2 = new PersonDAO();
-        dao2.deletePersonDAO("12345678913");
+        dao = new PersonDAO();
+        dao.deletePersonDAO("12345678913");
     }
 
     @Test
-    public void t0001_CreateDriver(){
+    public void t0001_DeveCreateDriver(){
         DriverDAO dao = new DriverDAO();
         Driver driver = new Driver(true,"12345678913");
 
-        if(dao.creatDriver(driver)){
-            System.out.println("Salvo com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+        Assert.assertTrue(dao.creatDriver(driver));
     }
     @Test
-    public void t0002_FindAll(){
+    public void t0002_DeveFindAll(){
         DriverDAO dao = new DriverDAO();
         List<Driver> drivers = new ArrayList<>();
 
@@ -45,36 +43,25 @@ public class DriverDAOTest {
     }
 
     @Test
-    public void t0003_UpdateDriverEnabling(){
+    public void t0003_DeveUpdateDriverEnabling(){
         DriverDAO dao = new DriverDAO();
         Driver driver = new Driver(false,"12345678913");
-        if(dao.UpdateDriverEnabling(driver)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+
+        Assert.assertTrue(dao.UpdateDriverEnabling(driver));
     }
 
     @Test
-    public void t0004_DeleteDriverCpf() {
+    public void t0004_DeveDeleteDriverCpf() {
         DriverDAO dao = new DriverDAO();
 
-        if (dao.deleteDriver("12345678913")) {
-            System.out.println("Deletado com sucesso");
-        } else {
-            Assert.fail("Error ao Deletar");
-        }
+        Assert.assertTrue(dao.deleteDriver("12345678913"));
     }
 
     @Test
-    public void t0005_DeleteClasse() {
+    public void t0005_DeveDeleteClasse() {
         Driver driver = new Driver();
         DriverDAO dao = new DriverDAO();
 
-        if (dao.deleteDriver(driver)) {
-            System.out.println("Deletado com sucesso");
-        } else {
-            Assert.fail("Error ao Deletar");
-        }
+        Assert.assertTrue(dao.deleteDriver(driver));
     }
 }

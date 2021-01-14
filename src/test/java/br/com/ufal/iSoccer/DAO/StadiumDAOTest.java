@@ -11,20 +11,17 @@ import java.util.List;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class StadiumDAOTest {
+
     @Test
-    public void t0001_creatStadium(){
+    public void t0001_DeveCreatStadium(){
         Stadium stadium = new Stadium(1,true,true,3000,20,2);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.creatStadium(stadium)){
-            System.out.println("Salvo com sucesso");
-        }else {
-            Assert.fail("Error ao salvar");
-        }
+        Assert.assertTrue(dao.creatStadium(stadium));
     }
 
     @Test
-    public void t0002_FindAll(){
+    public void t0002_DeveFindAll(){
         StadiumDAO dao = new StadiumDAO();
         List<Stadium> stadiums = new ArrayList<>();
 
@@ -33,74 +30,50 @@ public class StadiumDAOTest {
     }
 
     @Test
-    public void t0003_UpdateExistStadium(){
+    public void t0003_DeveUpdateExistStadium(){
         Stadium stadium = new Stadium(1,false,true,3000,20,4);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.UpdateStadiumExist(stadium)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateStadiumExist(stadium));
     }
 
     @Test
-    public void t0004_UpdateAvaliableStadium(){
+    public void t0004_DeveUpdateAvaliableStadium(){
         Stadium stadium = new Stadium(1,false,false,3000,20,4);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.UpdateStadiumAvailable(stadium)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateStadiumAvailable(stadium));
     }
 
     @Test
-    public void t0005_UpdateChairsStadium(){
+    public void t0005_DeveUpdateChairsStadium(){
         Stadium stadium = new Stadium(1,false,false,4000,20,4);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.UpdateStadiumChairs(stadium)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateStadiumChairs(stadium));
     }
 
     @Test
-    public void t0006_UpdateBathroomStadium(){
+    public void t0006_DeveUpdateBathroomStadium(){
         Stadium stadium = new Stadium(1,false,false,4000,30,4);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.UpdateStadiumBathroom(stadium)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateStadiumBathroom(stadium));
     }
 
     @Test
-    public void t0007_UpdateSnackBarStadium(){
+    public void t0007_DeveUpdateSnackBarStadium(){
         Stadium stadium = new Stadium(1,false,false,4000,30,8);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.UpdateStadiumSnack(stadium)){
-            System.out.println("alterado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.UpdateStadiumSnack(stadium));
     }
 
     @Test
-    public void t0008_DeleteStadium(){
+    public void t0008_DeveDeleteStadium(){
         Stadium stadium = new Stadium(1,false,false,4000,30,8);
         StadiumDAO dao = new StadiumDAO();
 
-        if(dao.deleteStadium(stadium)){
-            System.out.println("Deletado com sucesso");
-        }else {
-            Assert.fail("Error ao alterar");
-        }
+        Assert.assertTrue(dao.deleteStadium(stadium));
     }
 }

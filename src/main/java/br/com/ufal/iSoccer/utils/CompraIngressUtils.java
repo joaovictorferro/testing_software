@@ -4,10 +4,11 @@ import br.com.ufal.iSoccer.entidades.Ingresso;
 import br.com.ufal.iSoccer.entidades.Person;
 
 import java.util.Date;
+import java.util.List;
 
 public class CompraIngressUtils {
     private Person person;
-    private Ingresso ingresso;
+    private List<Ingresso> ingresso;
     private Double valor;
     private Date dataCompra;
 
@@ -19,20 +20,12 @@ public class CompraIngressUtils {
         this.person = person;
     }
 
-    public Ingresso getIngresso() {
-        return ingresso;
-    }
-
-    public void setIngresso(Ingresso ingresso) {
-        this.ingresso = ingresso;
-    }
-
     public Double getValor() {
         return valor;
     }
 
     public void setValor(Double valor) {
-        valor = valor;
+        this.valor = valor;
     }
 
     public Date getDataCompra() {
@@ -43,4 +36,11 @@ public class CompraIngressUtils {
         this.dataCompra = dataCompra;
     }
 
+    public List<Ingresso> getIngresso() {
+        return ingresso;
+    }
+
+    public void setIngresso(List<Ingresso> ingresso) {
+        this.ingresso = ingresso;
+    }
 }
