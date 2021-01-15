@@ -71,22 +71,21 @@ create table ingresso(
 );
 
 create table compraIngresso(
-	id_ingresso int primary key not null,
-	cpf varchar(11) not null,
-    precoValor decimal (10, 2) not null,
+	cpf varchar(11) primary key not null,
+    valor decimal (10, 2) not null,
     quantComprada int not null
 );
 
-create table Utilitario(
+create table utilitario(
 	id_utilitario int primary key not null,
 	estoque int not null,
     precoVenda decimal (10, 2) not null,
-    quantComprada int not null
+    quantComprada int not null,
+    nome varChar(256) not null
 );
 
 create table compraUtilitario(
-	id_utilitario int primary key not null,
-	cpf varchar(11) not null,
+	cpf varchar(11) primary key not null,
     precoValor decimal (10, 2) not null,
     quantComprada int not null
 );

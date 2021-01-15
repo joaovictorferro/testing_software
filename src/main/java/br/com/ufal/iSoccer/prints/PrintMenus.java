@@ -3,77 +3,79 @@ package br.com.ufal.iSoccer.prints;
 
 public class PrintMenus {
     public void printMainMenu(){
-        System.out.println("--- Menu de Administração Principal ---");
-        System.out.println("1 - Adicionar funcionário ao sistema");
-        System.out.println("2 - Gerenciar funcionários");
-        System.out.println("3 - Adicionar sócio-torcedor");
-        System.out.println("4 - Gerenciar sócio-torcedores");
-        System.out.println("5 - Gerenciar recursos físicos");
-        System.out.println("6 - Solicitar Relatórios");
-        System.out.println("7 - Sair");
+        System.out.println("--- Menu de Administraï¿½ï¿½o Principal ---");
+        System.out.println("1 - Adicionar funcionï¿½rio ao sistema");
+        System.out.println("2 - Gerenciar funcionï¿½rios");
+        System.out.println("3 - Adicionar socio-torcedor");
+        System.out.println("4 - Gerenciar socio-torcedores");
+        System.out.println("5 - Gerenciar recursos fï¿½sicos");
+        System.out.println("6 - Solicitar Relatï¿½rios");
+        System.out.println("7 - Compra ingressos");
+        System.out.println("8 - Compra utilitatios");
+        System.out.println("9 - Sair");
     }
 
     public void printEmployeeManagementMenu(){
-        System.out.println("---- Gerência de Funcionários ----");
-        System.out.println("1 - Listar todos os funcionários");
-        System.out.println("2 - Deletar um funcionário");
-        System.out.println("3 - Alterar salário de um funcionário");
+        System.out.println("---- Gerï¿½ncia de Funcionï¿½rios ----");
+        System.out.println("1 - Listar todos os funcionï¿½rios");
+        System.out.println("2 - Deletar um funcionï¿½rio");
+        System.out.println("3 - Alterar salï¿½rio de um funcionï¿½rio");
         System.out.println("4 - Alterar disponibilidade de jogador");
         System.out.println("5 - Sair");
     }
 
     public void printFanManagementMenu(){
-        System.out.println("---- Gerência de Associados ----");
-        System.out.println("1 - Listar todos os sócios");
-        System.out.println("2 - Deletar um sócio");
-        System.out.println("3 - Alterar taxa de contribuição");
+        System.out.println("---- Gerï¿½ncia de Associados ----");
+        System.out.println("1 - Listar todos os sï¿½cios");
+        System.out.println("2 - Deletar um sï¿½cio");
+        System.out.println("3 - Alterar taxa de contribuiï¿½ï¿½o");
         System.out.println("4 - Sair");
     }
 
     public void printPhysicalResourcesMenu(){
-        System.out.println("--- Gerência de Recursos Físicos ---");
-        System.out.println("1 - Estádio");
-        System.out.println("2 - Ônibus");
+        System.out.println("--- Gerencia de Recursos Fï¿½sicos ---");
+        System.out.println("1 - Estadio");
+        System.out.println("2 - onibus");
         System.out.println("3 - Centro de Treinamento");
         System.out.println("4 - Sair");
     }
 
     public void printStadiumManagementMenu(){
-        System.out.println("---- Gerência de Estádio ----");
+        System.out.println("---- Gerï¿½ncia de Estï¿½dio ----");
         System.out.println("1 - Verificar disponibilidade");
-        System.out.println("2 - Alterar existência do estádio");
-        System.out.println("3 - Alterar disponibilidade do estádio");
-        System.out.println("4 - Alterar número de banheiros, assentos e lanchonetes");
-        System.out.println("5 - Informações sobre os recursos do estádio");
+        System.out.println("2 - Alterar existï¿½ncia do estï¿½dio");
+        System.out.println("3 - Alterar disponibilidade do estï¿½dio");
+        System.out.println("4 - Alterar nï¿½mero de banheiros, assentos e lanchonetes");
+        System.out.println("5 - Informaï¿½ï¿½es sobre os recursos do estï¿½dio");
         System.out.println("6 - Sair");
     }
 
     public void printBusManagementMenu(){
-        System.out.println("---- Gerência de Ônibus ----");
-        System.out.println("1 - Verificar disponibilidade");
-        System.out.println("2 - Alterar existência do ônibus");
-        System.out.println("3 - Alterar disponibilidade do ônibus");
+        System.out.println("---- Gerï¿½ncia de onibus ----");
+        System.out.println("1 - Criar o onibus");
+        System.out.println("2 - Alterar existencia do onibus");
+        System.out.println("3 - Alterar disponibilidade do onibus");
         System.out.println("4 - Sair");
     }
 
     public void printTrainingCenterMenu(){
-        System.out.println("---- Gerência do CT ----");
+        System.out.println("---- Gerï¿½ncia do CT ----");
         System.out.println("1 - Verificar disponibilidade");
-        System.out.println("2 - Alterar existência do CT");
+        System.out.println("2 - Alterar existï¿½ncia do CT");
         System.out.println("3 - Alterar disponibilidade do CT");
-        System.out.println("4 - Número de dormitórios");
+        System.out.println("4 - Nï¿½mero de dormitï¿½rios");
         System.out.println("5 - Sair");
     }
 
     public void printReportsMenu(){
-        System.out.println("---- Relátorios -----");
+        System.out.println("---- Relï¿½torios -----");
         System.out.println("1 - Time");
-        System.out.println("2 - Serviços Gerais");
+        System.out.println("2 - Serviï¿½os Gerais");
         System.out.println("3 - Transporte");
         System.out.println("4 - Centro de Treinamento");
-        System.out.println("5 - Estádio");
-        System.out.println("6 - Sócio Torcedor");
-        System.out.println("7 - Todos os relátorios");
+        System.out.println("5 - Estï¿½dio");
+        System.out.println("6 - Sï¿½cio Torcedor");
+        System.out.println("7 - Todos os relï¿½torios");
         System.out.println("8 - Sair");
     }
 }

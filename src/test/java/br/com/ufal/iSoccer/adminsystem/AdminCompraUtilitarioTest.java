@@ -3,25 +3,21 @@ package br.com.ufal.iSoccer.adminsystem;
 import br.com.ufal.iSoccer.DAO.FanDAO;
 import br.com.ufal.iSoccer.DAO.PersonDAO;
 import br.com.ufal.iSoccer.entidades.Fan;
-import br.com.ufal.iSoccer.entidades.Ingresso;
 import br.com.ufal.iSoccer.entidades.Person;
 import br.com.ufal.iSoccer.entidades.Utilitario;
-import br.com.ufal.iSoccer.utils.CompraIngressUtils;
-import br.com.ufal.iSoccer.utils.CompraUtilitariosUtils;
+import br.com.ufal.iSoccer.utils.CompraUtilitarioUtils;
 import br.com.ufal.iSoccer.utils.DataUtils;
 import org.junit.*;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AdminCompraUtilitarioTest {
-    private static CompraUtilitariosUtils compraUtilitariosUtils;
+    private static CompraUtilitarioUtils compraUtilitarioUtils;
     private static PersonDAO dao;
     private static FanDAO dao2;
 
@@ -50,10 +46,10 @@ public class AdminCompraUtilitarioTest {
 
         //acao
         try {
-            compraUtilitariosUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
+            compraUtilitarioUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
             //verificacao
-            Assert.assertEquals(5.00, compraUtilitariosUtils.getValor(), 0.01);
-            Assert.assertTrue(DataUtils.isMesmaData(compraUtilitariosUtils.getDataCompra(), new Date()));
+            Assert.assertEquals(5.00, compraUtilitarioUtils.getValor(), 0.01);
+            Assert.assertTrue(DataUtils.isMesmaData(compraUtilitarioUtils.getDataCompra(), new Date()));
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail();
@@ -68,7 +64,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1, 0, 5.00,1,"camisa");
 
         try {
-            compraUtilitariosUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
+            compraUtilitarioUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertThat(e.getMessage(), is("Utilitario sem estoque"));
@@ -81,7 +77,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1, 3, 5.00,1,"camisa");
 
         try {
-            compraUtilitariosUtils = adminCompraUtilitario.Comprautilirario(null, utilitario);
+            compraUtilitarioUtils = adminCompraUtilitario.Comprautilirario(null, utilitario);
             Assert.fail();
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,7 +91,7 @@ public class AdminCompraUtilitarioTest {
         Person person = new Person("Joao", "12345678915", "12345679", "joao@gmail.com",0.0,"Fan");
 
         try {
-            compraUtilitariosUtils = adminCompraUtilatario.Comprautilirario(person, null);
+            compraUtilitarioUtils = adminCompraUtilatario.Comprautilirario(person, null);
             Assert.fail();
         } catch (Exception e) {
             e.printStackTrace();
@@ -110,7 +106,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1,5,4.00,3,"camisa");
 
         try {
-            CompraUtilitariosUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
+            CompraUtilitarioUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
             Assert.assertEquals(resultado.getValor(),9.00,0.01);
         } catch (Exception e) {
             e.printStackTrace();
@@ -128,7 +124,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1,5,4.00,3,"camisa");
 
         try {
-            CompraUtilitariosUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
+            CompraUtilitarioUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
             Assert.assertEquals(resultado.getValor(),6.0,0.01);
         } catch (Exception e) {
             e.printStackTrace();
@@ -146,7 +142,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1,5,4.00,3,"camisa");
 
         try {
-            CompraUtilitariosUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
+            CompraUtilitarioUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
             Assert.assertEquals(resultado.getValor(),3.0,0.01);
         } catch (Exception e) {
             e.printStackTrace();
@@ -160,7 +156,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1,5,4.00,3,"camisa");
 
         try {
-            CompraUtilitariosUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
+            CompraUtilitarioUtils resultado = adminCompraUtilitario.Comprautilirario(person,utilitario);
             Assert.assertEquals(resultado.getValor(),12.0,0.01);
         } catch (Exception e) {
             e.printStackTrace();
@@ -175,7 +171,7 @@ public class AdminCompraUtilitarioTest {
         Utilitario utilitario = new Utilitario(1, 4, 5.00,5,"camisa");
 
         try {
-            compraUtilitariosUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
+            compraUtilitarioUtils = adminCompraUtilitario.Comprautilirario(person, utilitario);
             Assert.fail();
         } catch (Exception e) {
             Assert.assertThat(e.getMessage(), is("Quantidade excede o estoque"));

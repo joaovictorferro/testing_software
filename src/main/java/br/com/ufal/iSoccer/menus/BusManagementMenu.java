@@ -1,6 +1,7 @@
 package br.com.ufal.iSoccer.menus;
 
 import br.com.ufal.iSoccer.adminsystem.BusManagement;
+import br.com.ufal.iSoccer.adminsystem.verificarItem;
 import br.com.ufal.iSoccer.physicalResources.Bus;
 import br.com.ufal.iSoccer.prints.PrintMenus;
 
@@ -24,33 +25,20 @@ public class BusManagementMenu {
         
         printMenus.printBusManagementMenu();
         option = scanner.nextInt();
-        option = escolhaItem(option);
-        acessaSistema(option);
+        option = verificarItem.verificarOption(option,4,1);
+        acessaSistema(option,bus);
     }
-    
-    public int escolhaItem(int option) throws Exception {
-  	   
-  	   if (option < 1)
-  	   {
-  		   throw new Exception("Menor que o escopo do menu");
-  	   }
-  	   
-  	   if(option > 4) {
-         	throw new Exception("Maior que o escopo do menu");
-         }
-  	   return option;
-     }
-    
-   public void acessaSistema(int option) {
+
+   public void acessaSistema(int option,Bus bus) throws Exception {
                 switch (option){
                     case 1:
-                        busManagement.checkBusAvailable();
+                        busManagement.checkBusAvailable(bus);
                         break;
                     case 2:
-                        busManagement.changeBusExisting();
+                        busManagement.changeBusExisting(bus);
                         break;
                     case 3:
-                        busManagement.changeBusAvailability();
+                        busManagement.changeBusAvailability(bus);
                         break;
                     default:
                         System.out.println("Escolha apenas entre as opcoes acima.");

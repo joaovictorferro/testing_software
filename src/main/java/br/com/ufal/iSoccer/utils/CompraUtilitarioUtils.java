@@ -5,11 +5,29 @@ import br.com.ufal.iSoccer.entidades.Utilitario;
 
 import java.util.Date;
 
-public class CompraUtilitariosUtils {
+public class CompraUtilitarioUtils {
     private Person person;
     private Utilitario utilitario;
     private Double valor;
+    private String cpf;
+    private int quantComprada;
     private Date dataCompra;
+
+    public int getQuantComprada() {
+        return quantComprada;
+    }
+
+    public void setQuantComprada(int quantComprada) {
+        this.quantComprada = quantComprada;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     public Person getPerson() {
         return person;

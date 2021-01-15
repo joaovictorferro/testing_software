@@ -10,7 +10,25 @@ public class CompraIngressUtils {
     private Person person;
     private Ingresso ingresso;
     private Double valor;
+    private String cpf;
+    private int quantComprada;
     private Date dataCompra;
+
+    public int getQuantComprada() {
+        return quantComprada;
+    }
+
+    public void setQuantComprada(int quantComprada) {
+        this.quantComprada = quantComprada;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
     public Person getPerson() {
         return person;

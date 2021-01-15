@@ -4,7 +4,7 @@ import br.com.ufal.iSoccer.DAO.FanDAO;
 import br.com.ufal.iSoccer.entidades.Fan;
 import br.com.ufal.iSoccer.entidades.Person;
 import br.com.ufal.iSoccer.entidades.Utilitario;
-import br.com.ufal.iSoccer.utils.CompraUtilitariosUtils;
+import br.com.ufal.iSoccer.utils.CompraUtilitarioUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,7 +13,7 @@ import java.util.List;
 public class AdminCompraUtilitario {
     private FanDAO dao = new FanDAO();
 
-    public CompraUtilitariosUtils Comprautilirario(Person person, Utilitario utilitario) throws Exception {
+    public CompraUtilitarioUtils Comprautilirario(Person person, Utilitario utilitario) throws Exception {
         if (person == null) {
             throw new Exception("Pessoa vazio");
         }
@@ -29,9 +29,9 @@ public class AdminCompraUtilitario {
             throw new Exception("Quantidade excede o estoque");
         }
 
-        CompraUtilitariosUtils compraUtilitariosUtils = new CompraUtilitariosUtils();
-        compraUtilitariosUtils.setUtilitario(utilitario);
-        compraUtilitariosUtils.setPerson(person);
+        CompraUtilitarioUtils compraUtilitarioUtils = new CompraUtilitarioUtils();
+        compraUtilitarioUtils.setUtilitario(utilitario);
+        compraUtilitarioUtils.setPerson(person);
 
         double valorTotal = 0.0;
         valorTotal += utilitario.getPrecoVenda() * utilitario.getQuantComprada();
@@ -55,20 +55,20 @@ public class AdminCompraUtilitario {
             }
         }
 
-        compraUtilitariosUtils.setValor(valorTotal);
-        compraUtilitariosUtils.setDataCompra(new Date());
+        compraUtilitarioUtils.setValor(valorTotal);
+        compraUtilitarioUtils.setDataCompra(new Date());
 
-        return compraUtilitariosUtils;
+        return compraUtilitarioUtils;
     }
 
-    public CompraUtilitariosUtils VendaUtilitarios(Utilitario utilitario) throws Exception {
+    public CompraUtilitarioUtils VendaUtilitarios(Utilitario utilitario) throws Exception {
         if (utilitario == null) {
             throw new Exception("Ingresso vazio");
         }
 
-        CompraUtilitariosUtils compraUtilitariosUtils = new CompraUtilitariosUtils();
-        compraUtilitariosUtils.setUtilitario(utilitario);
+        CompraUtilitarioUtils compraUtilitarioUtils = new CompraUtilitarioUtils();
+        compraUtilitarioUtils.setUtilitario(utilitario);
 
-        return compraUtilitariosUtils;
+        return compraUtilitarioUtils;
     }
 }
