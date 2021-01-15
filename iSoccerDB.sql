@@ -94,3 +94,5 @@ create table agendarVisita(
 	cpf varchar(11) primary key not null,
     dia_visita date not null
 );
+
+select * from person;
