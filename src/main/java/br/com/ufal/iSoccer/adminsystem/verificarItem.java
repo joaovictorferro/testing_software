@@ -4,12 +4,12 @@ public class verificarItem {
 
     public static String verificarStringNumerica(String numero, int tamanho) throws Exception {
         if (numero.length() != tamanho) {
-            throw new Exception("Telefone Errado!!");
+            throw new Exception("String numerica Errada");
         }
         for (int i = 0; i < numero.length(); i++) {
             char ch = numero.charAt(i);
             if (ch < 48 || ch > 57)
-                throw new Exception("Letra encontrado no Telefone!!");
+                throw new Exception("Letra encontrado na String");
         }
         return numero;
     }

@@ -13,99 +13,108 @@ public class StadiumManagement {
         this.stadium = stadium;
     }
 
-    public void checkStadiumAvailability(){
+    public boolean checkStadiumAvailability(){
         if(stadium.isExist()){
-            if(stadium.isAvailable())
+            if(stadium.isAvailable()) {
                 System.out.println("\n - Estadio disponivel para uso - \n");
-            else
+                return true;
+            }else {
                 System.out.println("\n - Estadio nao disponivel para uso - \n");
+                return false;
+            }
         }else{
             System.out.println("\n - O time nao possui estadio. - \n");
+            return false;
         }
     }
 
-    public void changeStadiumExisting(){
+    public void changeStadiumExisting() throws Exception {
         int option = 0;
 
-        while(option != 1 && option != 2){
-            if(stadium.isExist())
+            if (stadium.isExist())
                 System.out.println("O time possui est�dio. Deseja alterar a exist�ncia desse recruso?");
             else
                 System.out.println("O time n�o possui est�dio. Deseja alterar a exist�ncia desse recurso?");
             System.out.println("1 - Manter, 2 - Alterar");
+            option = scanner.nextInt();
+            option = verificarItem.verificarOption(option, 2, 1);
+    }
 
-            try{
-                option = scanner.nextInt();
-                switch (option){
-                    case 1:
-                        break;
-                    case 2:
-                        if(stadium.isExist() == true)
-                            stadium.setExist(false);
-                        else
-                            stadium.setExist(true);
-                        break;
-                    default:
-                        System.out.println("\n - Escolha apenas entre as duas op��es. -\n");
-                        break;
-                }
-            }catch (InputMismatchException e){
-                System.out.println("ERRO. Informe apenas n�meros inteiros.");
-                scanner.nextLine();
-            }
+    public void changeStadiumExisting(int option){
+        switch (option){
+            case 1:
+                break;
+            case 2:
+                if(stadium.isExist() == true)
+                    stadium.setExist(false);
+                else
+                    stadium.setExist(true);
+                break;
+            default:
+                System.out.println("\n - Escolha apenas entre as duas op��es. -\n");
+                break;
         }
     }
 
-    public void changeStadiumAvailability(){
+    public void changeStadiumAvailability() throws Exception {
         int option = 0;
 
-        while(option != 1 && option != 2){
-            System.out.println("Alterar disponibilidade do est�dio: ");
-            System.out.println("1 - Dispon�vel, 2 - N�o dispon�vel");
-
-            try{
-                option = scanner.nextInt();
-                switch (option){
-                    case 1:
-                        stadium.setAvailable(true);
-                        break;
-                    case 2:
-                        stadium.setAvailable(false);
-                        break;
-                    default:
-                        System.out.println("Escolha apenas entre as duas op��es.");
-                        break;
-                }
-            }catch (InputMismatchException e){
-                System.out.println("ERRO. Informe apenas n�meros inteiros.");
-                scanner.nextLine();
-            }
+        System.out.println("Alterar disponibilidade do est�dio: ");
+        System.out.println("1 - Dispon�vel, 2 - N�o dispon�vel");
+        option = scanner.nextInt();
+        option = verificarItem.verificarOption(option, 2, 1);
+        changeStadiumAvailabiliySistema(option);
+    }
+    public void changeStadiumAvailabiliySistema(int option){
+        switch (option){
+            case 1:
+                stadium.setAvailable(true);
+                break;
+            case 2:
+                stadium.setAvailable(false);
+                break;
+            default:
+                System.out.println("Escolha apenas entre as duas op��es.");
+                break;
         }
     }
 
-    public void changeResourcesStadiumNumber(){
-        int newChairsValue, newBathroomValue, newSnackBarNumber;
+    public void changeResourcesStadiumNumber() throws Exception {
+        int option = 0;
+        int newSnackBarNumber,newChairsValue,newBathroomValue;
 
-        while(true){
-            try{
+        System.out.println("Alterar os recursos fisicos do estadio: ");
+        System.out.println("1 - Capacidade, 2 - banheiros,3 - lanchonetes");
+        option = scanner.nextInt();
+        option = verificarItem.verificarOption(option, 2, 1);
+
+        switch (option) {
+            case 1:
                 System.out.println("Informe o novo n�mero de assentos: ");
                 newChairsValue = scanner.nextInt();
-                stadium.setChairsNumber(newChairsValue);
-
+                changeStadiumChairs(newChairsValue);
+                break;
+            case 2:
                 System.out.println("Informe o novo n�mero de banheiros: ");
                 newBathroomValue = scanner.nextInt();
-                stadium.setBathroomNumber(newBathroomValue);
-
+                changeStadiumBathroom(newBathroomValue);
+            case 3:
                 System.out.println("Informe o novo n�mero de lanchonetes: ");
                 newSnackBarNumber = scanner.nextInt();
-                stadium.setSnackBarNumber(newSnackBarNumber);
-
-                break;
-            }catch (InputMismatchException e){
-                System.out.println("ERRO. Informe apenas n�meros inteiros.");
-                scanner.nextLine();
-            }
+                changeStadiumSnack(newSnackBarNumber);
         }
+    }
+
+    public void changeStadiumChairs(int newChairsValue) {
+        stadium.setChairsNumber(newChairsValue);
+    }
+
+    public void changeStadiumBathroom(int newBathroomValue){
+        stadium.setBathroomNumber(newBathroomValue);
+    }
+
+    public void changeStadiumSnack(int newSnackBarNumber){
+        stadium.setSnackBarNumber(newSnackBarNumber);
     }
 
     public void returnStadiumInformations(){

@@ -12,80 +12,75 @@ public class TrainingCenterManagement {
         this.trainingCenter = trainingCenter;
     }
 
-    public void checkTrainingCenterAvailable(){
+    public boolean checkTrainingCenterAvailable(){
         if(trainingCenter.isExist()){
-            if(trainingCenter.isAvailable())
+            if(trainingCenter.isAvailable()) {
                 System.out.println("\n - Centro de treinamento disponivel para uso - \n");
-            else
+                return true;
+            }else {
                 System.out.println("\n - Centro de treinamento nao disponivel para uso - \n");
+                return false;
+            }
         }else{
             System.out.println("\n - O time nao possui Centro de treinamento. - \n");
+            return false;
         }
     }
 
-    public void changeTrainingCenterExisting(){
+    public void changeTrainingCenterExisting() throws Exception {
         Scanner scanner = new Scanner(System.in);
         int option = 0;
 
-        while(option != 1 && option != 2){
-            if(trainingCenter.isExist()){
-                System.out.println("O time possui Centro de Treinamento. \n" +
-                        "Deseja alterar a exist�ncia do recurso ?");
-            }else{
-                System.out.println("O time n�o possui Centro de Treinamento. \n " +
-                        "Deseja alterar esse estado e adicionar o recurso ?");
-            }
-            System.out.println("1 - Manter, 2 - Alterar");
+        if (trainingCenter.isExist()) {
+            System.out.println("O time possui Centro de Treinamento. \n" +
+                    "Deseja alterar a exist�ncia do recurso ?");
+        } else {
+            System.out.println("O time n�o possui Centro de Treinamento. \n " +
+                    "Deseja alterar esse estado e adicionar o recurso ?");
+        }
+        System.out.println("1 - Manter, 2 - Alterar");
 
-            try{
-                option = scanner.nextInt();
+        option = scanner.nextInt();
+        option = verificarItem.verificarOption(option,2,1);
+    }
 
-                switch (option){
-                    case 1:
+    public void changeTrainingCenterExisting(int option){
+        switch (option){
+            case 1:
+                break;
+            case 2:
+                 if(trainingCenter.isExist())
+                     trainingCenter.setExist(false);
+                 else
+                     trainingCenter.setExist(true);
                         break;
-                    case 2:
-                        if(trainingCenter.isExist())
-                            trainingCenter.setExist(false);
-                        else
-                            trainingCenter.setExist(true);
-                        break;
-                    default:
-                        System.out.println("\n - Escolha apenas entre as duas op��es. -\n");
-                        break;
-                }
-            }catch (InputMismatchException e){
-                System.out.println("ERRO. Informe apenas n�meros inteiros.");
-                scanner.nextLine();
-            }
         }
     }
 
-    public void changeTrainingCenterAvailability(){
+    public void changeTrainingCenterAvailability() throws Exception {
         Scanner scanner = new Scanner(System.in);
         int option = 0;
 
-        while(option != 1 && option != 2){
-            System.out.println("Alterar disponibilidade do centro de treinamento: ");
-            System.out.println("1 - Dispon�vel, 2 - N�o dispon�vel");
+        System.out.println("Alterar disponibilidade do centro de treinamento: ");
+        System.out.println("1 - Dispon�vel, 2 - N�o dispon�vel");
+        option = scanner.nextInt();
+        option = verificarItem.verificarOption(option,2,1);
+        changeTrainingCenterAvailabilitySistema(option);
+    }
 
-            try{
-                option = scanner.nextInt();
-                switch (option){
-                    case 1:
-                        trainingCenter.setAvailable(true);
-                        break;
-                    case 2:
-                        trainingCenter.setAvailable(false);
-                        break;
-                    default:
-                        System.out.println("Escolha apenas entre as duas op��es.");
-                        break;
-                }
-            }catch (InputMismatchException e){
-                System.out.println("ERRO. Informe apenas n�meros inteiros.");
-                scanner.nextLine();
-            }
+    public void changeTrainingCenterAvailabilitySistema(int option){
+        switch (option){
+            case 1:
+                trainingCenter.setAvailable(true);
+                break;
+            case 2:
+                trainingCenter.setAvailable(false);
+                break;
         }
+    }
+
+    public void changeBedroom(int bedroom){
+        trainingCenter.setBedroomsNumber(bedroom);
     }
 
     public void printBedroomsNumber(){
