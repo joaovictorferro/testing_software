@@ -1,6 +1,6 @@
-# testing_software
+# Testing_software
 
-##Aluno
+## Aluno
 - João Victor Ribeiro Ferro
 
 ##Aprensatação do Sistema
@@ -13,7 +13,7 @@ Do tipo Elite tem 75% de desconto no valor total.
 Na compra de ingressos, a partir de 4 ingressos, 1 sai de graça.
 No agendamento de visitas, não pode ocorrer dia de quarta e domingo, ou seja, dia de jogo.
 
-##Funcionabilidades
+## Funcionabilidades
 - Adicionar funcionário no sistema
 - Remover funcionário no sistema
 - Atualizar informações do funcionário no sistema
@@ -22,7 +22,8 @@ No agendamento de visitas, não pode ocorrer dia de quarta e domingo, ou seja, d
 - Compra Utilitários
 - Agendar visita ao estádio
 
-##Modo de Uso:
+## Modo de Uso:
 - IDE Intellij 2020.3.1
 - JUnit 4.12
 - MySQL 8.0.18
+- JDK 11
