@@ -1,5 +1,7 @@
 package br.com.ufal.iSoccer.utils;
 
+import br.com.ufal.iSoccer.entidades.Person;
+
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.DAY_OF_WEEK;
 import static java.util.Calendar.MONTH;
@@ -9,6 +11,33 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DataUtils {
+    private Person person;
+    private String cpf;
+    private Date agendamento;
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Date getAgendamento() {
+        return agendamento;
+    }
+
+    public void setAgendamento(Date agendamento) {
+        this.agendamento = agendamento;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
 
     /**
      * Retorna a data enviada por parametro com a adição dos dias desejado

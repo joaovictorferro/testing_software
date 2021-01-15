@@ -86,11 +86,11 @@ create table utilitario(
 
 create table compraUtilitario(
 	cpf varchar(11) primary key not null,
-    precoValor decimal (10, 2) not null,
+    valor decimal (10, 2) not null,
     quantComprada int not null
 );
 
 create table agendarVisita(
-	id_visita int primary key not null,
-    dia_visita int not null
+	cpf varchar(11) primary key not null,
+    dia_visita date not null
 );

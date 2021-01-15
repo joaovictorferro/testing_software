@@ -32,6 +32,7 @@ public class AdminCompraIngresso {
         CompraIngressUtils compraIngressUtils = new CompraIngressUtils();
         compraIngressUtils.setIngresso(ingresso);
         compraIngressUtils.setPerson(person);
+        compraIngressUtils.setCpf(person.getCpf());
 
         double valorTotal = 0.0;
         valorTotal += ingresso.getPrecoVenda() * ingresso.getQuantComprada();

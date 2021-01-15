@@ -35,7 +35,7 @@ public class CompraUtilitarioUtilsDAO {
     }
 
     public List<CompraUtilitarioUtils> findAll(){
-        String sql = "select * from compraUtilario ";
+        String sql = "select * from compraUtilitario ";
 
         PreparedStatement stmt = null;
         ResultSet rs = null;

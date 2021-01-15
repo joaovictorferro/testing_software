@@ -32,6 +32,7 @@ public class AdminCompraUtilitario {
         CompraUtilitarioUtils compraUtilitarioUtils = new CompraUtilitarioUtils();
         compraUtilitarioUtils.setUtilitario(utilitario);
         compraUtilitarioUtils.setPerson(person);
+        compraUtilitarioUtils.setCpf(person.getCpf());
 
         double valorTotal = 0.0;
         valorTotal += utilitario.getPrecoVenda() * utilitario.getQuantComprada();

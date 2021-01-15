@@ -80,7 +80,7 @@ public class CompraIngressoUtilsDAO {
         }
     }
 
-    public boolean UpdateIngressoQuantComprada(CompraIngressUtils compraIngressUtils){
+    public boolean UpdateCompraIngressoQuantComprada(CompraIngressUtils compraIngressUtils){
         String sql = "UPDATE compraIngresso SET quantComprada = ? WHERE cpf=?";
         PreparedStatement stmt = null;
 
